@@ -1,21 +1,22 @@
-## Tetris
+# Tetris
 
-## How to use
+# How to use
 
 Just clone it and get going.
+DEMO: https://sergeisomin.github.io/Tetris/
 
-# install all dependencies.
+## Install all dependencies:
 
 npm i
 
-# Start developing and serve your app:
+## Start developing and serve your app:
 
 npm start
 
-# Build your app without minification:
+## Build your app without minification:
 
 npm run build
 
-# Build your app with minification:
+## Build your app with minification:
 
 npm run build.prod
