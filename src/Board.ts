@@ -6,8 +6,9 @@ export default class Board extends Container {
   public onFigureMerged: Function;
   public onBoardOverflow: Function;
 
-  private boardWidth: number;
-  private boardHeight: number;
+  public boardWidth: number;
+  public boardHeight: number;
+
   private backgroundTileTexture: Texture;
   private movingFigure: Figure;
   private tiles: Tile[][];
@@ -83,6 +84,14 @@ export default class Board extends Container {
   }
 
   startMovingFigure(figure: Figure) {
+    if (
+      !figure.tiles.every(tile => tile.canMove(tile.getXPos(), tile.getYPos()))
+    ) {
+      if (this.onBoardOverflow) {
+        this.onBoardOverflow();
+        return;
+      }
+    }
     this.movingFigure = figure;
     this.addChild(...figure.tiles);
   }

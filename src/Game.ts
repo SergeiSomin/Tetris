@@ -135,7 +135,9 @@ export default class Game extends Container {
     this.startFigure();
   }
 
-  stop() {}
+  stop() {
+    this.timeElapsed = 0;
+  }
 
   update(elapsedMS: number) {
     this.timeElapsed += elapsedMS;
